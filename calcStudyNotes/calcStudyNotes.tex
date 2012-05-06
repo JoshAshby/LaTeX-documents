@@ -1,0 +1,173 @@
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage{courier} % Required for the courier font
+\usepackage{mathtools}
+\usepackage{amssymb}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\authorName} % Top left header
+\chead{\class\ : \Title} % Top center head
+\rhead{} % Top right header
+\lfoot{} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\newcommand{\Title}{2nd Semi. Key Notes} % Assignment title
+\newcommand{\class}{Calc 2} % Course/class
+\newcommand{\authorName}{Josh Ashby} % Your name
+
+\begin{document}
+\(<5,\sqrt{6.7}i>\) - Stand back, I know \(i\)Vectors!\\
+\section*{Convergence and Infinite Series}
+  \subsection*{Series}
+  \begin{itemize}
+    \item Geometric series\\
+      \subitem \( \sum ar^n \) \\
+      if \( |r|<1 \) then \( \sum ar^n \) converges\\
+      The sum can be found with \(\frac{a}{1-r}\)\\
+      \subitem eg:\\
+      \( \sum\limits_{n=0}^{\infty} \frac {4} {2^n} =
+      \sum\limits_{n=0}^{\infty} 4 \times (\frac {1} {2})^n \) where
+      \(a=4\) and \(r=\frac {1} {2} < 1 \therefore \sum\limits_{n=0}^{\infty}
+      \frac{4}{2^n} \) converges \\
+    \item P-Series
+      \subitem \( \sum \frac{1}{n^p}\) where
+      \( p>0 \) \\
+      if \(p>1\) then the series converges\\
+      if \(p<=1\) then the series diverges\\
+      if \(p=1\) then the series is harmonic and diverges (which is
+      useful for the comparison test)\\
+    \item Alternating Series
+      \subitem \( \sum (-1)^n a_n \)\\
+      converges if \( \lim_{n\rightarrow\infty} a_n=0 \) and \( a_{n+1}<a_n \)\\
+  \end{itemize}
+  \subsection*{Tests}
+  \begin{itemize}
+    \item $n^{th}$ term test - Only for divergence\\
+      \subitem if \( \lim_{n\rightarrow\infty}a_n\neq0 \) then \( \sum
+      a_n\) diverges\\
+    \item Integral Test\\
+      \subitem if \( \int\limits_{1}^{\infty} f(x) \, dx \) converges
+      then \( \sum\limits_{n=1}^{\infty} a_n\) converges where \(
+      f(x)=a_n\). The converse of this is also true.\\
+    \item Limit Comparison\\
+      \subitem if \( \lim_{n\rightarrow\infty} \frac{a_n}{b_n} = L \)
+      where L is both positive and finite, then the two series
+      both either converge or diverge.\\
+      \subitem eg:\\
+      \( \sum\limits_{n=3}^{\infty} \frac{3}{\sqrt{n^2-4}} \)
+      compared to 
+      \( \sum\limits_{n=1}^{\infty}\frac{1}{n} \)\\
+      \( \lim_{n\rightarrow\infty}\left( \frac{3}{\sqrt{n^2-4}}
+      \times \frac{n}{1} \right)=\frac{\infty}{\infty}\)\\
+      \(L'H \rightarrow \lim_{n\rightarrow\infty}\left(
+      \frac{3\sqrt{n^2-4}}{n} \right)=\frac{\infty}{\infty}\)\\
+      \(\lim_{n\rightarrow\infty}\left(
+      \frac{3\sqrt{n^2-4}}{\sqrt{n^2}} \right) =
+      3\lim_{n\rightarrow\infty}\sqrt{\frac{n^2-4}{n^2}} =
+      3\sqrt{\lim_{n\rightarrow\infty}\frac{n^2-4}{n^2}} =
+      3 \times 1 = 3 \therefore \sum\limits_{n=0}^{\infty}
+      \frac{3}{\sqrt{n^2-4}}\) diverges since \( \frac{1}{n} \)
+      diverges and the limit is finite and positive.\\
+    \item Ratio Test
+      \subitem \(\lim_{n\rightarrow\infty}\left|
+      \frac{a_{n+1}}{a_n} \right|\)\\
+      if \(<1 ~ a_n\) converges\\
+      if \(>1 ~ a_n\) diverges\\
+      if \(=1\) the test is inconclusive\\
+      \subitem eg:\\
+      Find the range of x where
+      \(\sum\limits_{n=3}^{\infty}\frac{(-1)^nn!(x-4)^n}{3^n}\)
+      converges.\\
+      \(\lim_{n\rightarrow\infty}\left|\frac{(n+1)!(x-4)^{n+1}}{3^{n+1}}
+      \times \frac{3^n}{n!(x-4)^n}\right|<1\)\\
+      \( \lim_{n\rightarrow\infty}\left| \frac{(x-4)(n+1)}{3}
+      \right|<1\) \\
+      \( \left| \frac{x-4}{3} \right|
+      \lim_{n\rightarrow\infty} \left| n+1 \right|<1 \therefore \)
+      no range of x makes \(
+      \sum\limits_{n=0}^{\infty}\frac{(-1)^nn!(x-4)^n}{3^n}\)
+      converge.\\
+    \item Condition Convergence\\
+      \subitem if \( \sum\limits_{n=1}^{\infty} a_n \) converges
+      and \( \sum\limits_{n=1}^{\infty} \left| a_n \right| \)
+      diverges\\
+  \end{itemize}
+\section*{Taylor Series}
+  \begin{itemize}
+    \item \(
+      f(x)=\sum\limits_{n=0}^{\infty}\frac{f^n(c)}{n!}(x-c)^n\)\\
+      if \(c=0\) then the series is a MacLaurin series\\
+      \subitem
+      \(f(x)=\sum\limits_{n=0}^{\infty}\frac{f^n(0)}{n!}x^n\)\\
+    \item  \(\sin(x)=\sum\limits_{n=0}^{\infty} (-1)^n
+      \frac{x^{2n+1}}{(2n+1)!}\)\\
+    \item \(\cos(x)=\sum\limits_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}
+     \)\\
+    \item\( e^x=\sum\limits_{n=0}^{\infty}\frac{x^n}{n!} \)\\
+      \subitem \( e^{-x}=\sum\limits_{n=0}^{\infty}(-1)^n
+      \frac{x^n}{n!} \)\\
+    \item \(\ln(x+1)=\sum\limits_{n=0}^{\infty}(-1)^n\frac{x^n}{n}\)\\
+    \item Example of finding the Taylor series centered at 0 (aka
+      MacLaurin) of \(e^x\)\\
+      \subitem \(f(x)=e^x\)\\
+      \subitem \(f(0)=1\)\\
+      \(f'(x)=e^x\) and \(f'(0)=1\)\\
+      \(f''(x)=e^x\) and \(f''(0)=1\)\\
+      \(f'''(x)=e^x\) and \(f'''(0)=1\)\\
+      \(\frac{1}{0!}x^0+\frac{1}{1!}x^1+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\cdots+\frac{1}{n!}x^n\)\\
+      \(\therefore f(x)=e^x=\sum\limits_{n=0}^{\infty}
+      \frac{x^n}{n!}\)\\
+  \end{itemize}
+\section*{Parametric and Polar Equations}
+  \subsection*{Parametric}
+  \begin{itemize}
+   \Large \item \( \dot{x}=\frac{dx}{dt}\)\\
+   \item \( \dot{y}=\frac{dy}{dt}\)\\
+   \item
+     \(\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}=\frac{\dot{y}}{\dot{x}}\) 
+      and \huge
+     \( \frac{d^2y}{\left(dx\right)^2} = \frac{\frac{d}{dt}\frac{dy}{dx}}{\frac{dx}{dt}} \)\\
+   \normalsize
+   \item \(Arc ~ length = \int\sqrt{\dot{x}^2+\dot{y}^2} \, dt\)\\
+   \item \(Area/integration = \int y(t) \frac{dx}{dt} \, dt = \int y \dot{x} \, dt \)\\
+   \item \(x=r\cos(\theta)\) and \(y=r\sin(\theta)\)\\
+  \end{itemize}
+  \subsection*{Polar}
+  \begin{itemize}
+   \item \(r=\sqrt{x^2+y^2}\)\\
+   \item \( r^2=x^2+y^2 \)\\
+   \item If going from parametric to polar, you have to convert
+      \(t\) to \(\theta\): \(\tan(\theta)=\frac{y}{x}\)\\
+   \item \(Arc ~ length = \int \sqrt{r^2+\left( \frac{dr}{d\theta}
+     \right)^2} \, d\theta\)
+   \item \(Area/integration = \frac{1}{2} \int r^2 \, d\theta \)\\
+  \end{itemize}
+\section*{Vectors}
+  \subsection*{The Basics}
+  \begin{itemize}
+    \item 
+    \item
+    \item
+    \item
+  \end{itemize}
+\end{document}
