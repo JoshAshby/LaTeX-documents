@@ -29,7 +29,7 @@
 \pagestyle{fancy}
 \lhead{\authorName} % Top left header
 \chead{\class\ : \Title} % Top center head
-\rhead{} % Top right header
+\rhead{Updated \today} % Top right head
 \lfoot{Typed by JoshAshby.\\Got questions or corrections?} % Bottom left footer
 \cfoot{\authorContact} % Bottom center footer
 \rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
@@ -38,17 +38,18 @@
 \setlength{\columnseprule}{1pt}
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
-\newcommand{\Title}{Various key notes} % Assignment title
+\newcommand{\Title}{Various Notes} % Assignment title
 \newcommand{\class}{Calc} % Course/class
-\newcommand{\authorName}{\colorbox{BrickRed}{\color{White}{JoshAshby}}}
+\newcommand{\authorName}{\large\colorbox{BrickRed}{\color{White}{JoshAshby}}}
 \newcommand{\authorContact}{{\color{BrickRed}[}
 joshuaashby@joshashby.com{\color{BrickRed}]}\\
 {\color{BrickRed}[}(720) - 663 -1279{\color{BrickRed}]}}
 
 \begin{document}
 \(<5,\sqrt{6.7}i>\) - Stand back, I know \(i\)Vectors!\\
-\section*{\color{Gray}Convergence and Infinite Series}
-  \subsection*{\color{BrickRed}Series}
+\section*{\color{Gray}Infinite Series, Convergence tests, and Taylor
+  Series}
+  \subsection*{\color{BrickRed}Infinite Series}
   \begin{itemize}
     \item Geometric series\\
       \subitem \( \sum ar^n \) \\
@@ -70,7 +71,7 @@ joshuaashby@joshashby.com{\color{BrickRed}]}\\
       \subitem \( \sum (-1)^n a_n \)\\
       converges if \( \lim_{n\rightarrow\infty} a_n=0 \) and \( a_{n+1}<a_n \)\\
   \end{itemize}
-  \subsection*{\color{BrickRed}Tests}
+  \subsection*{\color{BrickRed}Convergence Tests}
   \begin{itemize}
     \item $n^{th}$ term test - Only for divergence\\
       \subitem if \( \lim_{n\rightarrow\infty}a_n\neq0 \) then \( \sum
@@ -122,7 +123,7 @@ joshuaashby@joshashby.com{\color{BrickRed}]}\\
       and \( \sum\limits_{n=1}^{\infty} \left| a_n \right| \)
       diverges\\
   \end{itemize}
-\section*{\color{Gray}Taylor Series}
+  \subsection*{\color{BrickRed}Taylor Series}
   \begin{multicols}{2}
   \begin{itemize}
     \item \(
@@ -152,14 +153,14 @@ joshuaashby@joshashby.com{\color{BrickRed}]}\\
   \end{itemize}
 \end{multicols}
 \newpage
-\section*{\color{Gray}Parametric and Polar Equations and Vectors}
+\section*{\color{Gray}Parametric, Polar and Vectors}
   \subsection*{\color{BrickRed}Parametric}
   \begin{itemize}
    \Large \item \( \dot{x}=\frac{dx}{dt}\)\\
    \item \( \dot{y}=\frac{dy}{dt}\)\\
    \item
      \(\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}=\frac{\dot{y}}{\dot{x}}\) 
-      and \huge
+      \normalsize and \huge
      \( \frac{d^2y}{\left(dx\right)^2} = \frac{\frac{d}{dt}\frac{dy}{dx}}{\frac{dx}{dt}} \)\\
    \normalsize
    \item \(Arc ~ length = \int\sqrt{\dot{x}^2+\dot{y}^2} \, dt\)\\
@@ -178,46 +179,48 @@ joshuaashby@joshashby.com{\color{BrickRed}]}\\
   \end{itemize}
   \subsection*{\color{BrickRed}Vectors}
   \begin{itemize}
-    \item To get it out of the way: You can't divide a
-      vector by another vector, only by a scalar.\ldots\\
-    \item Second of all, vectors are just parametric equations in
-      disguse, they just have an x and a y componet represented
+    \item First off, I'm going to get this out of the way now: You can't divide a
+      vector by another vector, only by a scalar\ldots\\
+    \item Second of all, vectors are really just parametric equations in
+      disguse, they just have an x and a y component represented
       by:\\
-    \subitem $\vec{i}=x$ the x componet of a vector\\
-    \subitem $\vec{j}=y$ the y componet of a vector\\
+    \subitem $\vec{i}=x$ the x component of a vector\\
+    \subitem $\vec{j}=y$ the y component of a vector\\
+    \subitem Now onto the good stuff\ldots
     \item All vectors have Magnitude and Direction.\\
-      \subitem $ \vec{r}=x\vec{i}+y\vec{j} $\\
-      \subitem $ \vec{r}=<x,y>$\\
-        \subsubitem The magnitude (a unit vector) is the same as the $|\vec{r}|=\sqrt{x^{2}+y^{2}}$\\
-	\subsubitem The dirrection (another unit vector ) is defined by $\frac{\vec{r}}{|\vec{r}|}$\\
+      \subitem $ \vec{a}=x\vec{i}+y\vec{j} $\\
+      \subitem $ \vec{a}=<x,y>$\\
+        \subsubitem The magnitude (a unit vector) is the same as the $|\vec{a}|=\sqrt{x^{2}+y^{2}}$\\
+	\subsubitem The dirrection (another unit vector ) is defined by $\frac{\vec{a}}{|\vec{a}|}$\\
+	\subsubitem (An unit vector is simply a vector who has a 
+	magnitude of 1)\\
     \item Addition \& Subtraction\\
-      \subitem $\vec{a}+\vec{b}=\vec{c}$\\
-      $\vec{c}=(a_x+b_x)\vec{i}+(a_y+b_y)\vec{j}$\\
-      \subitem Simply add the x componets together for the new
-      vectors x componet, and add the y componets together for the new
-      vectors componet. What this is essentially doing is placing the tail of
-      one vector at the head of the other.\\
+      \subitem $(a_x+b_x)\vec{i}+(a_y+b_y)\vec{j}=\vec{c}$\\
+      \subitem Simply add the x components together, and the y
+      components together.\\ 
     \item Multiplication\\
       \subitem Scalar product\\
       	\subsubitem $6 \times \vec{a}=(6\times
 	a_x)\vec{i}+(6\times a_y)\vec{j}$\\
-        \subsubitem Vector multiplied by a single number
-	(scalar). This is also how you divide a vector by a
+        \subsubitem Vector multiplied by a scalar. This is also how you divide a vector by a
 	scalar.\\
         \subsubitem Simply multiply the scalar out to both the x
-	and y componets.\\
+	and y components.\\
       \subitem Dot product\\
       \subsubitem $\vec{a}\cdot \vec{b}=(a_x\times b_x)+(a_y
       \times b_y)$\\
         \subsubitem Two vectors multiplied together\\
-	\subsubitem Multiply the x componets together and add them
-	to the y componets multiplied together. This results in a
-	scalar, not a vector.\\
+	\subsubitem Add the product of the x components to the
+	product of the y components to form a scalar.\\
       \subitem Cross Product\\
+      \subsubitem
+      $\vec{a}\times\vec{b}=|\vec{a}||\vec{b}|\sin{\theta}n$\\
+      \subsubitem where $n$ is a unit vector perpendicular to the plane
+      containing $\vec{a}\text{ and }\vec{b}$ (think the right
+      hand rule)\\
         \subsubitem Two vectors multiplied together\\
 	\subsubitem Results in another vector.\\
-    \item Helpful vectors and finding relationships between two
-      vectors\\
+    \item Helpful vectors and other things\\
       \subitem Angle between two vectors\\
         \subsubitem $\cos{\theta}=\frac{\vec{a}\cdot
 	\vec{b}}{|\vec{a}||\vec{b}|}$\\
