@@ -4,41 +4,51 @@
 \usepackage{lastpage} % Required to determine the last page for the footer
 \usepackage{extramarks} % Required for headers and footers
 \usepackage[usenames,dvipsnames]{color} % Required for custom colors
-\usepackage{courier} % Required for the courier font
+%\usepackage{courier} % Required for the courier font
 \usepackage{mathtools}
 \usepackage{amssymb}
+\usepackage{multicol}
+
+\usepackage{paratype}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
 
 % Margins
 \topmargin=-0.45in
+\leftmargin=0.45in
+\rightmargin=0.45in
 \evensidemargin=0in
 \oddsidemargin=0in
 \textwidth=6.5in
 \textheight=9.0in
 \headsep=0.25in
 
-\linespread{1.1} % Line spacing
+\linespread{1} % Line spacing
 
 % Set up the header and footer
 \pagestyle{fancy}
 \lhead{\authorName} % Top left header
 \chead{\class\ : \Title} % Top center head
 \rhead{} % Top right header
-\lfoot{} % Bottom left footer
-\cfoot{} % Bottom center footer
+\lfoot{Typed by JoshAshby.\\Got questions or corrections?} % Bottom left footer
+\cfoot{\authorContact} % Bottom center footer
 \rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
-\renewcommand\headrulewidth{0.4pt} % Size of the header rule
-\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
-
+\renewcommand\headrulewidth{0pt} % Size of the header rule
+\renewcommand\footrulewidth{0pt} % Size of the footer rule
+\setlength{\columnseprule}{1pt}
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
-\newcommand{\Title}{2nd Semi. Key Notes} % Assignment title
-\newcommand{\class}{Calc 2} % Course/class
-\newcommand{\authorName}{Josh Ashby} % Your name
+\newcommand{\Title}{Various key notes} % Assignment title
+\newcommand{\class}{Calc} % Course/class
+\newcommand{\authorName}{\colorbox{BrickRed}{\color{White}{JoshAshby}}}
+\newcommand{\authorContact}{{\color{BrickRed}[}
+joshuaashby@joshashby.com{\color{BrickRed}]}\\
+{\color{BrickRed}[}(720) - 663 -1279{\color{BrickRed}]}}
 
 \begin{document}
 \(<5,\sqrt{6.7}i>\) - Stand back, I know \(i\)Vectors!\\
-\section*{Convergence and Infinite Series}
-  \subsection*{Series}
+\section*{\color{Gray}Convergence and Infinite Series}
+  \subsection*{\color{BrickRed}Series}
   \begin{itemize}
     \item Geometric series\\
       \subitem \( \sum ar^n \) \\
@@ -60,7 +70,7 @@
       \subitem \( \sum (-1)^n a_n \)\\
       converges if \( \lim_{n\rightarrow\infty} a_n=0 \) and \( a_{n+1}<a_n \)\\
   \end{itemize}
-  \subsection*{Tests}
+  \subsection*{\color{BrickRed}Tests}
   \begin{itemize}
     \item $n^{th}$ term test - Only for divergence\\
       \subitem if \( \lim_{n\rightarrow\infty}a_n\neq0 \) then \( \sum
@@ -112,7 +122,8 @@
       and \( \sum\limits_{n=1}^{\infty} \left| a_n \right| \)
       diverges\\
   \end{itemize}
-\section*{Taylor Series}
+\section*{\color{Gray}Taylor Series}
+  \begin{multicols}{2}
   \begin{itemize}
     \item \(
       f(x)=\sum\limits_{n=0}^{\infty}\frac{f^n(c)}{n!}(x-c)^n\)\\
@@ -127,6 +138,7 @@
       \subitem \( e^{-x}=\sum\limits_{n=0}^{\infty}(-1)^n
       \frac{x^n}{n!} \)\\
     \item \(\ln(x+1)=\sum\limits_{n=0}^{\infty}(-1)^n\frac{x^n}{n}\)\\
+      \columnbreak
     \item Example of finding the Taylor series centered at 0 (aka
       MacLaurin) of \(e^x\)\\
       \subitem \(f(x)=e^x\)\\
@@ -138,8 +150,10 @@
       \(\therefore f(x)=e^x=\sum\limits_{n=0}^{\infty}
       \frac{x^n}{n!}\)\\
   \end{itemize}
-\section*{Parametric and Polar Equations}
-  \subsection*{Parametric}
+\end{multicols}
+\newpage
+\section*{\color{Gray}Parametric and Polar Equations and Vectors}
+  \subsection*{\color{BrickRed}Parametric}
   \begin{itemize}
    \Large \item \( \dot{x}=\frac{dx}{dt}\)\\
    \item \( \dot{y}=\frac{dy}{dt}\)\\
@@ -152,7 +166,7 @@
    \item \(Area/integration = \int y(t) \frac{dx}{dt} \, dt = \int y \dot{x} \, dt \)\\
    \item \(x=r\cos(\theta)\) and \(y=r\sin(\theta)\)\\
   \end{itemize}
-  \subsection*{Polar}
+  \subsection*{\color{BrickRed}Polar}
   \begin{itemize}
    \item \(r=\sqrt{x^2+y^2}\)\\
    \item \( r^2=x^2+y^2 \)\\
@@ -162,12 +176,55 @@
      \right)^2} \, d\theta\)
    \item \(Area/integration = \frac{1}{2} \int r^2 \, d\theta \)\\
   \end{itemize}
-\section*{Vectors}
-  \subsection*{The Basics}
+  \subsection*{\color{BrickRed}Vectors}
   \begin{itemize}
-    \item 
-    \item
-    \item
-    \item
+    \item To get it out of the way: You can't divide a
+      vector by another vector, only by a scalar.\ldots\\
+    \item Second of all, vectors are just parametric equations in
+      disguse, they just have an x and a y componet represented
+      by:\\
+    \subitem $\vec{i}=x$ the x componet of a vector\\
+    \subitem $\vec{j}=y$ the y componet of a vector\\
+    \item All vectors have Magnitude and Direction.\\
+      \subitem $ \vec{r}=x\vec{i}+y\vec{j} $\\
+      \subitem $ \vec{r}=<x,y>$\\
+        \subsubitem The magnitude (a unit vector) is the same as the $|\vec{r}|=\sqrt{x^{2}+y^{2}}$\\
+	\subsubitem The dirrection (another unit vector ) is defined by $\frac{\vec{r}}{|\vec{r}|}$\\
+    \item Addition \& Subtraction\\
+      \subitem $\vec{a}+\vec{b}=\vec{c}$\\
+      $\vec{c}=(a_x+b_x)\vec{i}+(a_y+b_y)\vec{j}$\\
+      \subitem Simply add the x componets together for the new
+      vectors x componet, and add the y componets together for the new
+      vectors componet. What this is essentially doing is placing the tail of
+      one vector at the head of the other.\\
+    \item Multiplication\\
+      \subitem Scalar product\\
+      	\subsubitem $6 \times \vec{a}=(6\times
+	a_x)\vec{i}+(6\times a_y)\vec{j}$\\
+        \subsubitem Vector multiplied by a single number
+	(scalar). This is also how you divide a vector by a
+	scalar.\\
+        \subsubitem Simply multiply the scalar out to both the x
+	and y componets.\\
+      \subitem Dot product\\
+      \subsubitem $\vec{a}\cdot \vec{b}=(a_x\times b_x)+(a_y
+      \times b_y)$\\
+        \subsubitem Two vectors multiplied together\\
+	\subsubitem Multiply the x componets together and add them
+	to the y componets multiplied together. This results in a
+	scalar, not a vector.\\
+      \subitem Cross Product\\
+        \subsubitem Two vectors multiplied together\\
+	\subsubitem Results in another vector.\\
+    \item Helpful vectors and finding relationships between two
+      vectors\\
+      \subitem Angle between two vectors\\
+        \subsubitem $\cos{\theta}=\frac{\vec{a}\cdot
+	\vec{b}}{|\vec{a}||\vec{b}|}$\\
+      \subitem Projection vectors\\
+      \subsubitem $proj_{\vec{a}}\vec{b}=\frac{\vec{a}\cdot \vec{b}}{|\vec{b}|^2}\times
+      \vec{b}$\\
+      \subitem Normal vectors\\
+      \subsubitem $norm_{\vec{a}}\vec{b}=\vec{a}-proj_{\vec{a}}\vec{b}$\\
   \end{itemize}
 \end{document}
