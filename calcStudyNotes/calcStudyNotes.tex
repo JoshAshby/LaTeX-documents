@@ -12,6 +12,7 @@
 \usepackage{paratype}
 \renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
 \usepackage[T1]{fontenc}
+\everymath{\displaystyle}
 
 % Margins
 \topmargin=-0.45in
@@ -52,14 +53,17 @@ joshuaashby@joshashby.com{\color{BrickRed}]}\\
   \subsection*{\color{BrickRed}Infinite Series}
   \begin{itemize}
     \item Geometric series\\
+      \begin{multicols}{2}
       \subitem \( \sum ar^n \) \\
       if \( |r|<1 \) then \( \sum ar^n \) converges\\
       The sum can be found with \(\frac{a}{1-r}\)\\
+      \columnbreak
       \subitem eg:\\
       \( \sum\limits_{n=0}^{\infty} \frac {4} {2^n} =
       \sum\limits_{n=0}^{\infty} 4 \times (\frac {1} {2})^n \) where
       \(a=4\) and \(r=\frac {1} {2} < 1 \therefore \sum\limits_{n=0}^{\infty}
       \frac{4}{2^n} \) converges \\
+    \end{multicols}
     \item P-Series
       \subitem \( \sum \frac{1}{n^p}\) where
       \( p>0 \) \\
@@ -81,9 +85,11 @@ joshuaashby@joshashby.com{\color{BrickRed}]}\\
       then \( \sum\limits_{n=1}^{\infty} a_n\) converges where \(
       f(x)=a_n\). The converse of this is also true.\\
     \item Limit Comparison\\
+      \begin{multicols}{2}
       \subitem if \( \lim_{n\rightarrow\infty} \frac{a_n}{b_n} = L \)
       where L is both positive and finite, then the two series
       both either converge or diverge.\\
+      \columnbreak
       \subitem eg:\\
       \( \sum\limits_{n=3}^{\infty} \frac{3}{\sqrt{n^2-4}} \)
       compared to 
@@ -92,6 +98,7 @@ joshuaashby@joshashby.com{\color{BrickRed}]}\\
       \times \frac{n}{1} \right)=\frac{\infty}{\infty}\)\\
       \(L'H \rightarrow \lim_{n\rightarrow\infty}\left(
       \frac{3\sqrt{n^2-4}}{n} \right)=\frac{\infty}{\infty}\)\\
+    \end{multicols}
       \(\lim_{n\rightarrow\infty}\left(
       \frac{3\sqrt{n^2-4}}{\sqrt{n^2}} \right) =
       3\lim_{n\rightarrow\infty}\sqrt{\frac{n^2-4}{n^2}} =
@@ -100,11 +107,13 @@ joshuaashby@joshashby.com{\color{BrickRed}]}\\
       \frac{3}{\sqrt{n^2-4}}\) diverges since \( \frac{1}{n} \)
       diverges and the limit is finite and positive.\\
     \item Ratio Test
+      \begin{multicols}{2}
       \subitem \(\lim_{n\rightarrow\infty}\left|
       \frac{a_{n+1}}{a_n} \right|\)\\
       if \(<1 ~ a_n\) converges\\
       if \(>1 ~ a_n\) diverges\\
       if \(=1\) the test is inconclusive\\
+      \columnbreak
       \subitem eg:\\
       Find the range of x where
       \(\sum\limits_{n=3}^{\infty}\frac{(-1)^nn!(x-4)^n}{3^n}\)
@@ -118,6 +127,7 @@ joshuaashby@joshashby.com{\color{BrickRed}]}\\
       no range of x makes \(
       \sum\limits_{n=0}^{\infty}\frac{(-1)^nn!(x-4)^n}{3^n}\)
       converge.\\
+    \end{multicols}
     \item Condition Convergence\\
       \subitem if \( \sum\limits_{n=1}^{\infty} a_n \) converges
       and \( \sum\limits_{n=1}^{\infty} \left| a_n \right| \)
@@ -154,19 +164,20 @@ joshuaashby@joshashby.com{\color{BrickRed}]}\\
 \end{multicols}
 \newpage
 \section*{\color{Gray}Parametric, Polar and Vectors}
+  \begin{multicols}{2}
   \subsection*{\color{BrickRed}Parametric}
   \begin{itemize}
-   \Large \item \( \dot{x}=\frac{dx}{dt}\)\\
+   \item \( \dot{x}=\frac{dx}{dt}\)\\
    \item \( \dot{y}=\frac{dy}{dt}\)\\
    \item
      \(\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}=\frac{\dot{y}}{\dot{x}}\) 
-      \normalsize and \huge
+   \item
      \( \frac{d^2y}{\left(dx\right)^2} = \frac{\frac{d}{dt}\frac{dy}{dx}}{\frac{dx}{dt}} \)\\
-   \normalsize
    \item \(Arc ~ length = \int\sqrt{\dot{x}^2+\dot{y}^2} \, dt\)\\
    \item \(Area/integration = \int y(t) \frac{dx}{dt} \, dt = \int y \dot{x} \, dt \)\\
    \item \(x=r\cos(\theta)\) and \(y=r\sin(\theta)\)\\
   \end{itemize}
+  \columnbreak
   \subsection*{\color{BrickRed}Polar}
   \begin{itemize}
    \item \(r=\sqrt{x^2+y^2}\)\\
@@ -177,21 +188,20 @@ joshuaashby@joshashby.com{\color{BrickRed}]}\\
      \right)^2} \, d\theta\)
    \item \(Area/integration = \frac{1}{2} \int r^2 \, d\theta \)\\
   \end{itemize}
+\end{multicols}
   \subsection*{\color{BrickRed}Vectors}
   \begin{itemize}
-    \item First off, I'm going to get this out of the way now: You can't divide a
-      vector by another vector, only by a scalar\ldots\\
-    \item Second of all, vectors are really just parametric equations in
-      disguse, they just have an x and a y component represented
+    \item You can't divide a vector by another vector, only by a scalar\ldots\\
+    \item Vectors are really just parametric equations in
+      disguise, they just have an x and a y component represented
       by:\\
     \subitem $\vec{i}=x$ the x component of a vector\\
     \subitem $\vec{j}=y$ the y component of a vector\\
-    \subitem Now onto the good stuff\ldots
     \item All vectors have Magnitude and Direction.\\
       \subitem $ \vec{a}=x\vec{i}+y\vec{j} $\\
       \subitem $ \vec{a}=<x,y>$\\
         \subsubitem The magnitude (a unit vector) is the same as the $|\vec{a}|=\sqrt{x^{2}+y^{2}}$\\
-	\subsubitem The dirrection (another unit vector ) is defined by $\frac{\vec{a}}{|\vec{a}|}$\\
+	\subsubitem The direction (another unit vector) is defined by $\frac{\vec{a}}{|\vec{a}|}$\\
 	\subsubitem (An unit vector is simply a vector who has a 
 	magnitude of 1)\\
     \item Addition \& Subtraction\\
