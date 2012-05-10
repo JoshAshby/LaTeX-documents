@@ -1,0 +1,87 @@
+\section{\color{Gray}Integration Stuff}
+  \subsection{\color{BrickRed}Integration by Parts}
+  \begin{multicols}{2}
+  \begin{itemize}
+    \item $\int u \, dv = uv-\int v \, du$\\
+      \subitem Must be able to take the derivative of $u$\\
+  \columnbreak
+    \item eg:\\
+      \subitem $f(x)=\int xe^x \, dx$\\
+        \begin{tabular}{l|l|l}
+          $u$ &  & $dv$ \\
+          \hline
+          $x$ & \searrow & $e^x$ \\
+          $1$ & \searrow & $e^x$ \\
+          & & $f(x)=xe^x-\int e^x \, dx$ \\
+        \end{tabular}
+  \end{itemize}
+  \end{multicols}
+  \subsection{\color{BrickRed}Two Sided Integration by Parts}
+  \begin{multicols}{2}
+  \begin{itemize}
+    \item Same as above however used when working with parts
+      that repeat such as $\sin$ and $\cos$.\\
+  \columnbreak
+    \item eg:\\
+      \subitem $f(x)=\int e^x\cos2x \, dx$\\
+        \begin{tabular}{l|l|l}
+          $u$ &  & $dv$ \\
+          \hline
+          $e^x$ & \overset{+}{\searrow} & $\cos2x$ \\
+          $e^x$ & \overset{-}{\searrow} & $\frac{1}{2}\sin2x$ \\
+          $e^x$ & \overset{+}{\leftarrow} & $-\frac{1}{4}\cos2x$ \\
+        \end{tabular}\\
+        Where $\frac{1}{2}\int \sin2x \, dx$\\
+        $u=2x \therefore du=2dx$\\
+        \\
+        $\therefore f(x)=\frac{1}{2}e^x\sin2x+\frac{1}{4}e^x\cos2x-\frac{1}{4}\int
+        e^x\cos2x \, dx$\\
+  \end{itemize}
+  \end{multicols}
+  \subsection{\color{BrickRed}Trig Reduction}
+  \begin{multicols}{2}
+  \begin{itemize}
+    \item Useful for integrating multiple $\sin$ and $\cos$ in
+     one problem. Change the one that is odd in power to its
+     substitute give by $1=\sin^2+\cos^2$. ie: if $\sin$ is
+     $\sin^3$ change it to $\sin \left(1-cos^2\right)$ and
+     visa versa. If they are equal in powers, change $\sin$
+     into $\cos$.\\
+  \columnbreak
+    \item eg:\\
+    $f(x)=\int \sin^3x\cos^2x\,dx$\\
+    $=\int \sinx \left[ \sin^2x\cos^2x \right]\,dx$\\
+    $=\int \sinx\left( 1-\cos^2x
+    \right)\left(\cos^2x\right)\,dx$\\
+    $=\int \sinx\left( \cos^2x-\cos^4x\right)\,dx\text{
+    where } u=\cos x$\\
+    $=-\int u^2-u^4 \, du$\\
+    $=-\frac{\cos^3x}{3}-\frac{\cos^5x}{5}+c$
+  \end{itemize}
+  \end{multicols}
+  \subsection{\color{BrickRed}Partial Fractions with linear
+  factors}
+  \begin{itemize}
+    \item
+    $\int\frac{1}{\left(x-p\right)\left(x-q\right)}=\int\frac{A}{x-q}+\int\frac{B}{x-q}$
+    and solve for $A$ and $B$.\\
+  \end{itemize}
+  \subsection{\color{BrickRed}Partial Fractions with non-linear
+  factors}
+  \begin{itemize}
+    \item
+    $\int\frac{1}{\left(x^2+2\right)\left(x-1\right)}=\int\frac{Ax+B}{x^2+2}+\frac{C}{x-1}$
+    and solve for $A$, $B$, and $C$.
+  \end{itemize}
+  \subsection{\color{BrickRed}Improper Integrals}
+  \begin{multicols}{2}
+  \begin{itemize}
+    \item A definite integral where one or both sides have an
+    infinite discontinuity.\\
+  \columnbreak
+    \item eg:\\
+    $\int\limits_{1}^{\infty}\frac{1}{x}\,dx=\left[\ln\left| x
+    \right|\right]\limits_{1}^{\infty}$\\
+    $=\lim_{b\rightarrow\infty}\ln|b|-\ln|1|$\\
+  \end{itemize}
+  \end{multicols}

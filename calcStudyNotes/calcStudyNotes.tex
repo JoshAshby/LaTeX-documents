@@ -1,26 +1,30 @@
+%        File: calcStudyNotes.tex
+%     Created: Thu May 10 03:00 PM 2012 M
+% Last Change: Thu May 10 03:00 PM 2012 M
+% JoshAshby 2012
 \documentclass{article}
 
 \usepackage{fancyhdr} % Required for custom headers
 \usepackage{lastpage} % Required to determine the last page for the footer
 \usepackage{extramarks} % Required for headers and footers
 \usepackage[usenames,dvipsnames]{color} % Required for custom colors
-%\usepackage{courier} % Required for the courier font
-\usepackage{mathtools}
-\usepackage{amssymb}
-\usepackage{multicol}
-
-\usepackage{paratype}
+\usepackage{mathtools} % Math stuff
+\usepackage{amssymb} % More math stuff
+\usepackage{multicol} % for the examples
+\usepackage{titlesec} % to style things
+\usepackage{paratype} % forgot what this is for\ldots
 \renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
 \usepackage[T1]{fontenc}
-\everymath{\displaystyle}
+
+\everymath{\displaystyle} % every math bit should now using displaystyle
 
 % Margins
 \topmargin=-0.45in
 \leftmargin=0.45in
 \rightmargin=0.45in
-\evensidemargin=0in
-\oddsidemargin=0in
-\textwidth=6.5in
+\evensidemargin=-0.5in
+\oddsidemargin=-0.5in
+\textwidth=7in
 \textheight=9.0in
 \headsep=0.25in
 
@@ -36,256 +40,34 @@
 \rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
 \renewcommand\headrulewidth{0pt} % Size of the header rule
 \renewcommand\footrulewidth{0pt} % Size of the footer rule
-\setlength{\columnseprule}{1pt}
+\setlength{\columnseprule}{1pt} % Rule seperates the columns
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
-\newcommand{\Title}{Various Notes} % Assignment title
-\newcommand{\class}{Calc} % Course/class
-\newcommand{\authorName}{\large\colorbox{BrickRed}{\color{White}{JA}}}
+
+\newcommand{\Title}{Various Notes} % Note Title
+\newcommand{\class}{Calc} % Course
+\newcommand{\authorName}{\large\colorbox{BrickRed}{\color{White}{JA}}} % Who wrote it? This dude.
 \newcommand{\authorContact}{{\color{BrickRed}[}
 joshuaashby@joshashby.com{\color{BrickRed}]}\\
-{\color{BrickRed}[}(720) - 663 -1279{\color{BrickRed}]}}
+{\color{BrickRed}[}(720) - 663 -1279{\color{BrickRed}]}} % How do you get a hold of me?
+
+% Setup Section and Table of Contents Styling
+\titleformat{\section}{\color{Gray}\bfseries\Large}{\color{Gray}}{}{}
+\titleformat{\subsection}{\color{BrickRed}\bfseries\large}{\color{BrickRed}}{}{}
+\titleformat{\subsubsection}{\color{BrickRed}\bfseries\normalsize}{\color{BrickRed}}{}{}
+\renewcommand{\contentsname}{\color{BrickRed}\bfseries\Large What and Where}
 
 \begin{document}
-\(<5,\sqrt{6.7}i>\) - Stand back, I know \(i\)Vectors!\\
-\section*{\color{Gray}Infinite Series, Convergence tests, and Taylor
-  Series}
-  \subsection*{\color{BrickRed}Infinite Series}
-  \begin{itemize}
-    \item Geometric series\\
-      \begin{multicols}{2}
-      \subitem \( \sum ar^n \) \\
-      if \( |r|<1 \) then \( \sum ar^n \) converges\\
-      The sum can be found with \(\frac{a}{1-r}\)\\
-      \columnbreak
-      \subitem eg:\\
-      \( \sum\limits_{n=0}^{\infty} \frac {4} {2^n} =
-      \sum\limits_{n=0}^{\infty} 4 \times (\frac {1} {2})^n \) where
-      \(a=4\) and \(r=\frac {1} {2} < 1 \therefore \sum\limits_{n=0}^{\infty}
-      \frac{4}{2^n} \) converges \\
-    \end{multicols}
-    \item P-Series
-      \subitem \( \sum \frac{1}{n^p}\) where
-      \( p>0 \) \\
-      if \(p>1\) then the series converges\\
-      if \(p<=1\) then the series diverges\\
-      if \(p=1\) then the series is harmonic and diverges (which is
-      useful for the comparison test)\\
-    \item Alternating Series
-      \subitem \( \sum (-1)^n a_n \)\\
-      converges if \( \lim_{n\rightarrow\infty} a_n=0 \) and \( a_{n+1}<a_n \)\\
-  \end{itemize}
-  \subsection*{\color{BrickRed}Convergence Tests}
-  \begin{itemize}
-    \item $n^{th}$ term test - Only for divergence\\
-      \subitem if \( \lim_{n\rightarrow\infty}a_n\neq0 \) then \( \sum
-      a_n\) diverges\\
-    \item Integral Test\\
-      \subitem if \( \int\limits_{1}^{\infty} f(x) \, dx \) converges
-      then \( \sum\limits_{n=1}^{\infty} a_n\) converges where \(
-      f(x)=a_n\). The converse of this is also true.\\
-    \item Limit Comparison\\
-      \begin{multicols}{2}
-      \subitem if \( \lim_{n\rightarrow\infty} \frac{a_n}{b_n} = L \)
-      where L is both positive and finite, then the two series
-      both either converge or diverge.\\
-      \columnbreak
-      \subitem eg:\\
-      \( \sum\limits_{n=3}^{\infty} \frac{3}{\sqrt{n^2-4}} \)
-      compared to 
-      \( \sum\limits_{n=1}^{\infty}\frac{1}{n} \)\\
-      \( \lim_{n\rightarrow\infty}\left( \frac{3}{\sqrt{n^2-4}}
-      \times \frac{n}{1} \right)=\frac{\infty}{\infty}\)\\
-      \(L'H \rightarrow \lim_{n\rightarrow\infty}\left(
-      \frac{3\sqrt{n^2-4}}{n} \right)=\frac{\infty}{\infty}\)\\
-    \end{multicols}
-      \(\lim_{n\rightarrow\infty}\left(
-      \frac{3\sqrt{n^2-4}}{\sqrt{n^2}} \right) =
-      3\lim_{n\rightarrow\infty}\sqrt{\frac{n^2-4}{n^2}} =
-      3\sqrt{\lim_{n\rightarrow\infty}\frac{n^2-4}{n^2}} =
-      3 \times 1 = 3 \therefore \sum\limits_{n=0}^{\infty}
-      \frac{3}{\sqrt{n^2-4}}\) diverges since \( \frac{1}{n} \)
-      diverges and the limit is finite and positive.\\
-    \item Ratio Test
-      \begin{multicols}{2}
-      \subitem \(\lim_{n\rightarrow\infty}\left|
-      \frac{a_{n+1}}{a_n} \right|\)\\
-      if \(<1 ~ a_n\) converges\\
-      if \(>1 ~ a_n\) diverges\\
-      if \(=1\) the test is inconclusive\\
-      \columnbreak
-      \subitem eg:\\
-      Find the range of x where
-      \(\sum\limits_{n=3}^{\infty}\frac{(-1)^nn!(x-4)^n}{3^n}\)
-      converges.\\
-      \(\lim_{n\rightarrow\infty}\left|\frac{(n+1)!(x-4)^{n+1}}{3^{n+1}}
-      \times \frac{3^n}{n!(x-4)^n}\right|<1\)\\
-      \( \lim_{n\rightarrow\infty}\left| \frac{(x-4)(n+1)}{3}
-      \right|<1\) \\
-      \( \left| \frac{x-4}{3} \right|
-      \lim_{n\rightarrow\infty} \left| n+1 \right|<1 \therefore \)
-      no range of x makes \(
-      \sum\limits_{n=0}^{\infty}\frac{(-1)^nn!(x-4)^n}{3^n}\)
-      converge.\\
-    \end{multicols}
-    \item Condition Convergence\\
-      \subitem if \( \sum\limits_{n=1}^{\infty} a_n \) converges
-      and \( \sum\limits_{n=1}^{\infty} \left| a_n \right| \)
-      diverges\\
-  \end{itemize}
-  \subsection*{\color{BrickRed}Taylor Series}
-  \begin{multicols}{2}
-  \begin{itemize}
-    \item \(
-      f(x)=\sum\limits_{n=0}^{\infty}\frac{f^n(c)}{n!}(x-c)^n\)\\
-      if \(c=0\) then the series is a MacLaurin series\\
-      \subitem
-      \(f(x)=\sum\limits_{n=0}^{\infty}\frac{f^n(0)}{n!}x^n\)\\
-    \item  \(\sin(x)=\sum\limits_{n=0}^{\infty} (-1)^n
-      \frac{x^{2n+1}}{(2n+1)!}\)\\
-    \item \(\cos(x)=\sum\limits_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}
-     \)\\
-    \item\( e^x=\sum\limits_{n=0}^{\infty}\frac{x^n}{n!} \)\\
-      \subitem \( e^{-x}=\sum\limits_{n=0}^{\infty}(-1)^n
-      \frac{x^n}{n!} \)\\
-    \item \(\ln(x+1)=\sum\limits_{n=0}^{\infty}(-1)^n\frac{x^n}{n}\)\\
-      \columnbreak
-    \item Example of finding the Taylor series centered at 0 (aka
-      MacLaurin) of \(e^x\)\\
-      \subitem \(f(x)=e^x\)\\
-      \subitem \(f(0)=1\)\\
-      \(f'(x)=e^x\) and \(f'(0)=1\)\\
-      \(f''(x)=e^x\) and \(f''(0)=1\)\\
-      \(f'''(x)=e^x\) and \(f'''(0)=1\)\\
-      \(\frac{1}{0!}x^0+\frac{1}{1!}x^1+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\cdots+\frac{1}{n!}x^n\)\\
-      \(\therefore f(x)=e^x=\sum\limits_{n=0}^{\infty}
-      \frac{x^n}{n!}\)\\
-  \end{itemize}
-\end{multicols}
+\input{./title.tex}
+{\color{Gray}\tableofcontents}
 \newpage
-\section*{\color{Gray}Parametric, Polar and Vectors}
-  \begin{multicols}{2}
-  \subsection*{\color{BrickRed}Parametric}
-  \begin{itemize}
-   \item \( \dot{x}=\frac{dx}{dt}\)\\
-   \item \( \dot{y}=\frac{dy}{dt}\)\\
-   \item
-     \(\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}=\frac{\dot{y}}{\dot{x}}\) 
-   \item
-     \( \frac{d^2y}{\left(dx\right)^2} = \frac{\frac{d}{dt}\frac{dy}{dx}}{\frac{dx}{dt}} \)\\
-   \item \(Arc ~ length = \int\sqrt{\dot{x}^2+\dot{y}^2} \, dt\)\\
-   \item \(Area/integration = \int y(t) \frac{dx}{dt} \, dt = \int y \dot{x} \, dt \)\\
-   \item \(x=r\cos(\theta)\) and \(y=r\sin(\theta)\)\\
-  \end{itemize}
-  \columnbreak
-  \subsection*{\color{BrickRed}Polar}
-  \begin{itemize}
-   \item \(r=\sqrt{x^2+y^2}\)\\
-   \item \( r^2=x^2+y^2 \)\\
-   \item If going from parametric to polar, you have to convert
-      \(t\) to \(\theta\): \(\tan(\theta)=\frac{y}{x}\)\\
-   \item \(Arc ~ length = \int \sqrt{r^2+\left( \frac{dr}{d\theta}
-     \right)^2} \, d\theta\)
-   \item \(Area/integration = \frac{1}{2} \int r^2 \, d\theta \)\\
-  \end{itemize}
-\end{multicols}
-  \subsection*{\color{BrickRed}Vectors}
-  \begin{itemize}
-    \item You can't divide a vector by another vector, only by a scalar\ldots\\
-    \item Vectors are really just parametric equations in
-      disguise, they just have an x and a y component represented
-      by:\\
-    \subitem $\vec{i}=x$ the x component of a vector\\
-    \subitem $\vec{j}=y$ the y component of a vector\\
-    \item All vectors have Magnitude and Direction.\\
-      \subitem $ \vec{a}=x\vec{i}+y\vec{j} $\\
-      \subitem $ \vec{a}=<x,y>$\\
-        \subsubitem The magnitude (a unit vector) is the same as the $|\vec{a}|=\sqrt{x^{2}+y^{2}}$\\
-	\subsubitem The direction (another unit vector) is defined by $\frac{\vec{a}}{|\vec{a}|}$\\
-	\subsubitem (An unit vector is simply a vector who has a 
-	magnitude of 1)\\
-    \item Addition \& Subtraction\\
-      \subitem $(a_x+b_x)\vec{i}+(a_y+b_y)\vec{j}=\vec{c}$\\
-      \subitem Simply add the x components together, and the y
-      components together.\\ 
-    \item Multiplication\\
-      \subitem Scalar product\\
-      	\subsubitem $6 \times \vec{a}=(6\times
-	a_x)\vec{i}+(6\times a_y)\vec{j}$\\
-        \subsubitem Vector multiplied by a scalar. This is also how you divide a vector by a
-	scalar.\\
-        \subsubitem Simply multiply the scalar out to both the x
-	and y components.\\
-      \subitem Dot product\\
-      \subsubitem $\vec{a}\cdot \vec{b}=(a_x\times b_x)+(a_y
-      \times b_y)$\\
-        \subsubitem Two vectors multiplied together\\
-	\subsubitem Add the product of the x components to the
-	product of the y components to form a scalar.\\
-      \subitem Cross Product\\
-      \subsubitem
-      $\vec{a}\times\vec{b}=|\vec{a}||\vec{b}|\sin{\theta}n$\\
-      \subsubitem where $n$ is a unit vector perpendicular to the plane
-      containing $\vec{a}\text{ and }\vec{b}$ (think the right
-      hand rule)\\
-        \subsubitem Two vectors multiplied together\\
-	\subsubitem Results in another vector.\\
-    \item Helpful vectors and other things\\
-      \subitem Angle between two vectors\\
-        \subsubitem $\cos{\theta}=\frac{\vec{a}\cdot
-	\vec{b}}{|\vec{a}||\vec{b}|}$\\
-      \subitem Projection vectors\\
-      \subsubitem $proj_{\vec{a}}\vec{b}=\frac{\vec{a}\cdot \vec{b}}{|\vec{b}|^2}\times
-      \vec{b}$\\
-      \subitem Normal vectors\\
-      \subsubitem $norm_{\vec{a}}\vec{b}=\vec{a}-proj_{\vec{a}}\vec{b}$\\
-  \end{itemize}
-  \newpage
-  \section*{\color{Gray}Integration Stuff}
-    \subsection*{\color{BrickRed}Integration by Parts}
-      \begin{itemize}
-        \item
-      \end{itemize}
-    \subsection*{\color{BrickRed}Trig Substitution}
-      \begin{itemize}
-        \item
-      \end{itemize}
-    \subsection*{\color{BrickRed}Trig Reduction}
-      \begin{itemize}
-        \item
-      \end{itemize}
-    \subsection*{\color{BrickRed}Partial Fractions with linear
-    factors}
-      \begin{itemize}
-        \item
-      \end{itemize}
-    \subsection*{\color{BrickRed}Improper Integrals}
-      \begin{itemize}
-        \item
-      \end{itemize}
-  \newpage
-  \section*{\color{Gray}Hyperbolic Trig}
-    \subsection*{\color{BrickRed}Parts and Pieces}
-      \begin{itemize}
-        \item
-      \end{itemize}
-  \newpage
-  \section*{\color{Gray}TODO:}
-    \subsection*{\color{BrickRed}Stuff that I may add as I get
-    time\ldots}
-    \begin{itemize}
-      \item Conic sections and General Quadratic
-      \item Eulers Method
-      \item Homogenious Differentials
-      \item First order linear equations
-      \item Orthogonal Tra.
-      \item The Shell Method
-        \subitem Volume of a torus
-      \item Arc Length - functional
-      \item Surface area of a curve
-      \item Centroids
-      \item Theorem of Pappus
-      \item Indeterminate Forms (L'H)
-      \item Lagrane Error Bound for infinite series
-    \end{itemize}
+\(<5,\sqrt{6.7}i>\) - Stand back, I know \(i\)Vectors! (It's a
+joke\ldots)\\
+\input{./Infinite.tex}
+\newpage
+\input{./Parametric.tex}
+\newpage
+\input{./Integration.tex}
+\newpage
+\input{./TODO.tex}
 \end{document}

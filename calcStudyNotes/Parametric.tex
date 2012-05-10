@@ -1,0 +1,78 @@
+\section{\color{Gray}Parametric, Polar and Vectors}
+  \begin{multicols}{2}
+  \subsection{\color{BrickRed}Parametric}
+  \begin{itemize}
+    \item \( \dot{x}=\frac{dx}{dt}\)\\
+    \item \( \dot{y}=\frac{dy}{dt}\)\\
+    \item
+      \(\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}=\frac{\dot{y}}{\dot{x}}\) 
+    \item
+      \( \frac{d^2y}{\left(dx\right)^2} = \frac{\frac{d}{dt}\frac{dy}{dx}}{\frac{dx}{dt}} \)\\
+    \item \(Arc ~ length = \int\sqrt{\dot{x}^2+\dot{y}^2} \, dt\)\\
+    \item \(Area/integration = \int y(t) \frac{dx}{dt} \, dt = \int y \dot{x} \, dt \)\\
+    \item \(x=r\cos(\theta)\) and \(y=r\sin(\theta)\)\\
+  \end{itemize}
+  \columnbreak
+  \subsection{\color{BrickRed}Polar}
+  \begin{itemize}
+    \item \(r=\sqrt{x^2+y^2}\)\\
+    \item \( r^2=x^2+y^2 \)\\
+    \item If going from parametric to polar, you have to convert
+      \(t\) to \(\theta\): \(\tan(\theta)=\frac{y}{x}\)\\
+    \item \(Arc ~ length = \int \sqrt{r^2+\left( \frac{dr}{d\theta}
+      \right)^2} \, d\theta\)
+    \item \(Area/integration = \frac{1}{2} \int r^2 \, d\theta \)\\
+  \end{itemize}
+  \end{multicols}
+  \subsection{\color{BrickRed}Vectors}
+  \begin{itemize}
+    \item You can't divide a vector by another vector, only by a scalar\ldots\\
+    \item Vectors are really just parametric equations in
+      disguise, they just have an x and a y component represented
+      by:\\
+      \subitem $\vec{i}=x$ the x component of a vector\\
+      \subitem $\vec{j}=y$ the y component of a vector\\
+    \item All vectors have Magnitude and Direction.\\
+      \subitem $ \vec{a}=x\vec{i}+y\vec{j} $\\
+      \subitem $ \vec{a}=<x,y>$\\
+        \subsubitem The magnitude (a unit vector) is the same as the $|\vec{a}|=\sqrt{x^{2}+y^{2}}$\\
+	\subsubitem The direction (another unit vector) is defined by $\frac{\vec{a}}{|\vec{a}|}$\\
+	\subsubitem (An unit vector is simply a vector who has a 
+	magnitude of 1)\\
+    \item Addition \& Subtraction\\
+      \subitem $(a_x+b_x)\vec{i}+(a_y+b_y)\vec{j}=\vec{c}$\\
+      \subitem Simply add the x components together, and the y
+      components together.\\ 
+    \item Multiplication\\
+      \subitem Scalar product\\
+      	\subsubitem $6 \times \vec{a}=(6\times
+	a_x)\vec{i}+(6\times a_y)\vec{j}$\\
+        \subsubitem Vector multiplied by a scalar. This is also how you divide a vector by a
+	scalar.\\
+        \subsubitem Simply multiply the scalar out to both the x
+	and y components.\\
+      \subitem Dot product\\
+        \subsubitem $\vec{a}\cdot \vec{b}=(a_x\times b_x)+(a_y
+        \times b_y)$\\
+        \subsubitem Two vectors multiplied together\\
+	\subsubitem Add the product of the x components to the
+	product of the y components to form a scalar.\\
+      \subitem Cross Product\\
+        \subsubitem
+        $\vec{a}\times\vec{b}=|\vec{a}||\vec{b}|\sin{\theta}n$\\
+        \subsubitem where $n$ is a unit vector perpendicular to the plane
+        containing $\vec{a}\text{ and }\vec{b}$ (think the right
+        hand rule)\\
+        \subsubitem Two vectors multiplied together\\
+	\subsubitem Results in another vector.\\
+    \item Helpful vectors and other things\\
+      \subitem Angle between two vectors\\
+        \subsubitem $\cos{\theta}=\frac{\vec{a}\cdot
+	\vec{b}}{|\vec{a}||\vec{b}|}$\\
+      \subitem Projection vectors\\
+        \subsubitem $proj_{\vec{a}}\vec{b}=\frac{\vec{a}\cdot \vec{b}}{|\vec{b}|^2}\times
+        \vec{b}$\\
+      \subitem Normal vectors\\
+        \subsubitem $norm_{\vec{a}}\vec{b}=\vec{a}-proj_{\vec{a}}\vec{b}$\\
+  \end{itemize}
+

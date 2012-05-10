@@ -1,0 +1,114 @@
+\section{\color{Gray}Infinite Series, Convergence tests, and Taylor Series}
+  \subsection{\color{BrickRed}Infinite Series}
+  \begin{itemize}
+    \item Geometric series\\
+      \begin{multicols}{2}
+      \subitem \( \sum ar^n \) \\
+      if \( |r|<1 \) then \( \sum ar^n \) converges\\
+      The sum can be found with \(\frac{a}{1-r}\)\\
+      \columnbreak
+      \subitem eg:\\
+      \( \sum\limits_{n=0}^{\infty} \frac {4} {2^n} =
+      \sum\limits_{n=0}^{\infty} 4 \times (\frac {1} {2})^n \) where
+      \(a=4\) and \(r=\frac {1} {2} < 1 \therefore \sum\limits_{n=0}^{\infty}
+      \frac{4}{2^n} \) converges \\
+    \end{multicols}
+    \item P-Series
+      \subitem \( \sum \frac{1}{n^p}\) where
+      \( p>0 \) \\
+      if \(p>1\) then the series converges\\
+      if \(p<=1\) then the series diverges\\
+      if \(p=1\) then the series is harmonic and diverges (which is
+      useful for the comparison test)\\
+    \item Alternating Series
+      \subitem \( \sum (-1)^n a_n \)\\
+      converges if \( \lim_{n\rightarrow\infty} a_n=0 \) and \( a_{n+1}<a_n \)\\
+  \end{itemize}
+  \subsection{\color{BrickRed}Convergence Tests}
+  \begin{itemize}
+    \item $n^{th}$ term test - Only for divergence\\
+      \subitem if \( \lim_{n\rightarrow\infty}a_n\neq0 \) then \( \sum
+      a_n\) diverges\\
+    \item Integral Test\\
+      \subitem if \( \int\limits_{1}^{\infty} f(x) \, dx \) converges
+      then \( \sum\limits_{n=1}^{\infty} a_n\) converges where \(
+      f(x)=a_n\). The converse of this is also true.\\
+    \item Limit Comparison\\
+      \begin{multicols}{2}
+      \subitem if \( \lim_{n\rightarrow\infty} \frac{a_n}{b_n} = L \)
+      where L is both positive and finite, then the two series
+      both either converge or diverge.\\
+      \columnbreak
+      \subitem eg:\\
+      \( \sum\limits_{n=3}^{\infty} \frac{3}{\sqrt{n^2-4}} \)
+      compared to 
+      \( \sum\limits_{n=1}^{\infty}\frac{1}{n} \)\\
+      \( \lim_{n\rightarrow\infty}\left( \frac{3}{\sqrt{n^2-4}}
+      \times \frac{n}{1} \right)=\frac{\infty}{\infty}\)\\
+      \(L'H \rightarrow \lim_{n\rightarrow\infty}\left(
+      \frac{3\sqrt{n^2-4}}{n} \right)=\frac{\infty}{\infty}\)\\
+    \end{multicols}
+      \(\lim_{n\rightarrow\infty}\left(
+      \frac{3\sqrt{n^2-4}}{\sqrt{n^2}} \right) =
+      3\lim_{n\rightarrow\infty}\sqrt{\frac{n^2-4}{n^2}} =
+      3\sqrt{\lim_{n\rightarrow\infty}\frac{n^2-4}{n^2}} =
+      3 \times 1 = 3 \therefore \sum\limits_{n=0}^{\infty}
+      \frac{3}{\sqrt{n^2-4}}\) diverges since \( \frac{1}{n} \)
+      diverges and the limit is finite and positive.\\
+    \item Ratio Test
+      \begin{multicols}{2}
+      \subitem \(\lim_{n\rightarrow\infty}\left|
+      \frac{a_{n+1}}{a_n} \right|\)\\
+      if \(<1 ~ a_n\) converges\\
+      if \(>1 ~ a_n\) diverges\\
+      if \(=1\) the test is inconclusive\\
+      \columnbreak
+      \subitem eg:\\
+      Find the range of x where
+      \(\sum\limits_{n=3}^{\infty}\frac{(-1)^nn!(x-4)^n}{3^n}\)
+      converges.\\
+      \(\lim_{n\rightarrow\infty}\left|\frac{(n+1)!(x-4)^{n+1}}{3^{n+1}}
+      \times \frac{3^n}{n!(x-4)^n}\right|<1\)\\
+      \( \lim_{n\rightarrow\infty}\left| \frac{(x-4)(n+1)}{3}
+      \right|<1\) \\
+      \( \left| \frac{x-4}{3} \right|
+      \lim_{n\rightarrow\infty} \left| n+1 \right|<1 \therefore \)
+      no range of x makes \(
+      \sum\limits_{n=0}^{\infty}\frac{(-1)^nn!(x-4)^n}{3^n}\)
+      converge.\\
+    \end{multicols}
+    \item Condition Convergence\\
+      \subitem if \( \sum\limits_{n=1}^{\infty} a_n \) converges
+      and \( \sum\limits_{n=1}^{\infty} \left| a_n \right| \)
+      diverges\\
+  \end{itemize}
+  \subsection{\color{BrickRed}Taylor Series}
+  \begin{multicols}{2}
+  \begin{itemize}
+    \item \(
+      f(x)=\sum\limits_{n=0}^{\infty}\frac{f^n(c)}{n!}(x-c)^n\)\\
+      if \(c=0\) then the series is a MacLaurin series\\
+      \subitem
+      \(f(x)=\sum\limits_{n=0}^{\infty}\frac{f^n(0)}{n!}x^n\)\\
+    \item  \(\sin(x)=\sum\limits_{n=0}^{\infty} (-1)^n
+      \frac{x^{2n+1}}{(2n+1)!}\)\\
+    \item \(\cos(x)=\sum\limits_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}
+     \)\\
+    \item\( e^x=\sum\limits_{n=0}^{\infty}\frac{x^n}{n!} \)\\
+      \subitem \( e^{-x}=\sum\limits_{n=0}^{\infty}(-1)^n
+      \frac{x^n}{n!} \)\\
+    \item \(\ln(x+1)=\sum\limits_{n=0}^{\infty}(-1)^n\frac{x^n}{n}\)\\
+      \columnbreak
+    \item Example of finding the Taylor series centered at 0 (aka
+      MacLaurin) of \(e^x\)\\
+      \subitem \(f(x)=e^x\)\\
+      \subitem \(f(0)=1\)\\
+      \(f'(x)=e^x\) and \(f'(0)=1\)\\
+      \(f''(x)=e^x\) and \(f''(0)=1\)\\
+      \(f'''(x)=e^x\) and \(f'''(0)=1\)\\
+      \(\frac{1}{0!}x^0+\frac{1}{1!}x^1+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\cdots+\frac{1}{n!}x^n\)\\
+      \(\therefore f(x)=e^x=\sum\limits_{n=0}^{\infty}
+      \frac{x^n}{n!}\)\\
+  \end{itemize}
+\end{multicols}
+
